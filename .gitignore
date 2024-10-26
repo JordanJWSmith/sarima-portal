@@ -1,0 +1,38 @@
+# General
+.DS_Store
+*.log
+*.env
+.env.local
+.env.*.local
+
+# Node.js (React frontend)
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.next/
+frontend/dist/
+frontend/.cache/
+
+# Python (Flask backend)
+backend/__pycache__/
+backend/*.py[cod]
+backend/instance/
+backend/.env
+backend/.venv/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.tox/
+backend/.coverage
+backend/.vscode/
+backend/venv/
+
+# Logs and local development
+*.log
+*.sqlite3
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.idea/
+.vscode/
