@@ -67,11 +67,23 @@ function ParamInput({ onSubmit }) {
 
     return (
         <div className="mb-6 text-center">
-            <h3 className="text-lg font-semibold mb-2">Set SARIMA Parameters</h3>
+            <h3 className="text-lg text-left font-semibold mb-2">Set SARIMA Parameters</h3>
 
             {error && (
                 <p className="text-red-600 mb-4">{error}</p>
             )}
+
+            <div className="grid grid-cols-4 gap-4 mb-4">
+                <div>
+                    <label className="block text-sm font-bold text-gray-600">Autoregressive terms</label>
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-600">Differencing order</label>
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-600">Moving average terms</label>
+                </div>
+            </div>
 
             {/* Grid Layout for Order and Seasonal Order */}
             <div className="grid grid-cols-4 gap-4 mb-4">
