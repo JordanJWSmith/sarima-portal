@@ -16,7 +16,7 @@ import {
 // Register required Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-function FileUpload({ setData }) {
+function FileUpload({ setData, setFilename }) {
     const [uploadedFile, setUploadedFile] = useState(null);
     const [previewData, setPreviewData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -35,6 +35,7 @@ function FileUpload({ setData }) {
                 setData(response.data.data);
                 setPreviewData(response.data.data);
                 setUploadedFile(file);
+                setFilename(file.name);  // Pass filename to parent
                 setIsLoading(false);
             } catch (error) {
                 console.error("File upload failed.", error);
@@ -48,6 +49,7 @@ function FileUpload({ setData }) {
     const resetUpload = () => {
         setUploadedFile(null);
         setPreviewData(null);
+        setFilename("");
     };
 
     // Prepare data for the chart

@@ -7,6 +7,7 @@ import axios from 'axios';
 function App() {
     const [data, setData] = useState(null);
     const [predictions, setPredictions] = useState([]);
+    const [filename, setFilename] = useState("");
 
     const handleRunPrediction = async (params) => {
         if (!data) {
@@ -61,7 +62,7 @@ function App() {
 
                 {/* File Upload Section */}
                 <div className="mt-8" id="upload-section">
-                    <FileUpload setData={setData} />
+                    <FileUpload setData={setData} setFilename={setFilename}/>
                 </div>
 
                 {/* Conditionally Rendered Sections */}
@@ -71,7 +72,11 @@ function App() {
                             <ParamInput onSubmit={handleRunPrediction} />
                         </div>
                         {predictions.length > 0 && (
-                            <PredictionChart predictions={predictions} originalData={formatDataForChart()} />
+                            <PredictionChart 
+                            predictions={predictions} 
+                            originalData={formatDataForChart()} 
+                            filename={filename}
+                            />
                         )}
                     </>
                 )}
