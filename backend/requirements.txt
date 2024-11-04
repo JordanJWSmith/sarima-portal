@@ -100,7 +100,7 @@ pyarrow==16.1.0
 pyasn1==0.5.1
 pycountry==22.3.5
 pycparser==2.21
-pydantic==1.10.15
+pydantic
 pydantic-settings==2.2.1
 pydantic_core==2.16.2
 pydeck==0.9.1
